@@ -19,6 +19,21 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QTextEdit" name="textEdit"/>
     </item>
@@ -61,6 +76,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionReload"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_open">
@@ -103,8 +119,25 @@
     <string>F1</string>
    </property>
   </action>
+  <action name="actionReload">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/refresh.png</normaloff>:/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>reload</string>
+   </property>
+   <property name="toolTip">
+    <string>重载</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

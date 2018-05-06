@@ -25,6 +25,8 @@ private slots:
     void on_action_save_triggered();
     void on_action_saveAs_triggered();
     void on_action_about_triggered();
+    void on_actionReload_triggered();
+    void selectionChange();
 };
 
 #endif // MAINWINDOW_H

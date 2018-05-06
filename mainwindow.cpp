@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     move((QApplication::desktop()->width()-width())/2, (QApplication::desktop()->height()-height())/2);
     connect(ui->action_quit, SIGNAL(triggered()), qApp, SLOT(quit()));
+    connect(ui->textEdit,SIGNAL(selectionChanged()),this,SLOT(selectionChange()));
 }
 
 MainWindow::~MainWindow()
@@ -92,4 +93,20 @@ void MainWindow::on_action_about_triggered()
     aboutMB.setIconPixmap(QPixmap(":/icon.png"));
     aboutMB.setWindowIcon(QIcon(":/icon.png"));
     aboutMB.exec();
+}
+
+void MainWindow::on_actionReload_triggered()
+{
+    if (path != "") {
+        open(path);
+    }
+}
+
+void MainWindow::selectionChange()
+{
+    QString s = ui->textEdit->textCursor().selectedText().trimmed();
+    if (s != "") {
+        QStringList SL = s.split(" ");
+        ui->statusBar->showMessage("选中 " + QString::number(SL.size()) + "个字节");
+    }
 }
